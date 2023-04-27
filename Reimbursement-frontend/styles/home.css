@@ -58,12 +58,14 @@ button {
 .saved-expense {
   margin-top: 40px;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .shift-right {
   margin-left: 70%;
   color: green;
   text-decoration: underline;
+  cursor: not-allowed;
 }
 
 .space-head>:nth-child(2)>:nth-child(1) {

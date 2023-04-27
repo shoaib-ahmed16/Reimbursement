@@ -199,7 +199,7 @@ $.ajax({
         detailsButton.innerHTML="view Details";
        }
        const d = new Date();
-       if(currentMonthIndex>=d.getMonth())
+       if(currentMonthIndex<=d.getMonth())
        {
         blockDiv.append(monthofReibursement,dateOfClaim,claimAmount,approvedAmount,paidAmount,claimStatus,detailsButton)
        document.getElementById("history-expense-display").append(blockDiv)
