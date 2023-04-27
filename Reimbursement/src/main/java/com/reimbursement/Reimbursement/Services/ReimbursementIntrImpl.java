@@ -30,5 +30,11 @@ public class ReimbursementIntrImpl implements ReimbursementIntr {
 				returnList.add(new ReimbursementDTO(r));
 		return returnList;
 	}
+
+	@Override
+	public List<Reimbursement> getAllReibursementDetailsByPaidStatus(boolean status) {
+		// TODO Auto-generated method stub
+		return reimbursementRepository.findByPaidStatus(status);
+	}
 	
 }

@@ -1,0 +1,49 @@
+form {
+  width: 50%;
+  margin-left: 42%;
+  margin-top: 100px;
+  text-align: left;
+}
+
+form>label {
+  color: coral;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form>input {
+  border: 1px solid black;
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  background-color: wheat;
+}
+
+.button {
+  margin-top: 10px;
+  width: 31%;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: green;
+  color: white;
+  border: 2px solid green;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+}
+
+h1 {
+  width: 60%;
+  margin-left: 20%;
+  text-align: center;
+  color: lightseagreen;
+}

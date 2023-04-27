@@ -1,0 +1,28 @@
+#main-header>div {
+  margin-left: 10px;
+  width: 15%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.blockDiv {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.blockDiv>div {
+  margin-left: 10px;
+  width: 15%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.blockDiv>:first-child {
+  margin-left: 15%;
+}
+
+.blockDiv>:nth-child(6) {
+  text-decoration: underline;
+  color: green;
+}

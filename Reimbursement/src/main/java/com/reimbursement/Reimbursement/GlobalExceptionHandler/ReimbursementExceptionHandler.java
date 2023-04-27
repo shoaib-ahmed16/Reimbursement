@@ -20,7 +20,7 @@ public class ReimbursementExceptionHandler {
 		return new ResponseEntity<ErrorMessage>(err,HttpStatus.BAD_REQUEST);
 	}
 	@ExceptionHandler
-	public ResponseEntity<ErrorMessage> myErrorHandler(ReimbursementFail rf,WebRequest req)
+	public ResponseEntity<ErrorMessage> myErrorHandler(UserNotFound rf,WebRequest req)
 	{
 		ErrorMessage err = new ErrorMessage(rf.getMessage(),LocalDateTime.now(),req.getDescription(false));
 		return new ResponseEntity<ErrorMessage>(err,HttpStatus.BAD_REQUEST);

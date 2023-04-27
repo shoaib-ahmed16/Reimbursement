@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reimbursement Managment System </title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/home.css">
+</head>
+
+<body>
+  <div style="display: flex; flex-wrap: wrap; margin-top: 50px;">
+    <div style="width: 25%; margin-left: 2%; border-right: 1px dashed black;" id="left-menu">
+      <div
+        style="background-color: lightgray; height: 40px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px; display: flex; flex-wrap: wrap;">
+        <div style="border-radius: 20px; background-color: rgb(120, 119, 119); width: 40px;height: 40px;"></div>
+        <div id="user-login-name">Ananya Singh</div>
+      </div>
+      <div>
+        <h3>People care system</h3>
+        <div>Home</div>
+      </div>
+      <div>
+        <h2>Managment</h2>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div>Employee</div>
+          <div>
+            <h3>></h3>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div>Attendance</div>
+          <div>
+            <h3>></h3>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div>Leaves</div>
+          <div>
+            <h3>></h3>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div>Payroll</div>
+          <div>
+            <h3>></h3>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div>Separation</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-left:2%;width: 65%;" id="main-display-reimbursement">
+      <div style="display: flex; flex-wrap: wrap;">
+        <div>Search mirror</div>
+        <div
+          style="border-radius: 20px; background-color: rgb(120, 119, 119); width: 40px;height: 40px;text-align: right;">
+        </div>
+      </div>
+      <div>
+        <div>Reimbursement</div>
+        <button style="background-color: green; border: 2px solid green; cursor: pointer;">Submit an Expense</button>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div>My space</div>
+        <div>
+          <div style="border-radius: 2px; background-color: black; width: 4px;height: 4px;text-align: right;"></div>
+          <div>Reimbursement</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        <h3>Saved Expenses</h3>
+        <h3>View all expenses</h3>
+      </div>
+      <div id="main-header" style="display: flex; flex-wrap: wrap;">
+        <div> </div>
+        <div>Month of Reimbursement</div>
+        <div>Date of Claim</div>
+        <div>Claime Amount</div>
+        <div>Claim Status</div>
+        <div>Detailed View</div>
+      </div>
+      <div id="saved0-expense-display"></div>
+
+      <div style="display: flex; flex-wrap: wrap;">
+        <h3>Reimbursement History</h3>
+      </div>
+      <div id="main-header-history" style="display: flex; flex-wrap: wrap;">
+        <div> </div>
+        <div>Month of Reimbursement</div>
+        <div>Date of Claim</div>
+        <div>Claime Amount</div>
+        <div>Approved Amount</div>
+        <div>Paid Amount</div>
+        <div>Claim Status</div>
+        <div>Detailed View</div>
+      </div>
+      <div id="history-expense-display"></div>
+    </div>
+  </div>
+</body>
+<script src="./scripts/home.js"></script>
+
+</html>
