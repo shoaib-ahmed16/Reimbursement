@@ -4,7 +4,9 @@
 
 ### Assignment expaining video: --> https://drive.google.com/drive/folders/1fxkPJSnrpwhLScZxcsPrPJrygXtV1Hwr?usp=share_link
 
-### frontend -deployment link : https://reimbursement-iqhl.vercel.app/ <b>Note ( backendcode have to run locally )</b>
+### frontend -deployment link : 1. https://reimbursement-iqhl.vercel.app/ <b>Note ( backendcode have to run locally )</b>
+###                             2. https://reimbursement-iqhl-git-main-shoaib-ahmed16.vercel.app/
+###                             3. https://reimbursement-iqhl-git-main-shoaib-ahmed16.vercel.app/
 
 ## 1.index.html (login signup page)
 
