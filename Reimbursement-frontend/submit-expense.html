@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Expense</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/home.css">
+</head>
+
+<body>
+  <form>
+    <label>Month Of Reimbursement</label><br>
+    <select id="claimMonth">
+    </select><br>
+    <label>Claim Year</label><br>
+    <input id="claimYear" placeholder="Claim Type"><br>
+    <label>Claim Type</label><br>
+    <input id="claimType" placeholder="Claim Type"><br>
+    <label>Date of Claim</label><br>
+    <input id="dateOfExpense" placeholder="dd/mm/yyyy"><br>
+    <label>Claim Amount</label><br>
+    <input id="amount" placeholder="Amount in Indian Currency"><br>
+    <button class="button submit" type="button" onclick="submitClaim()">Submit</button><br>
+    <button class="button cancel" type="button" onclick="cancel()">Cancel</button>
+  </form>
+
+</body>
+<script src="./scripts/submit-expense.js"></script>
+
+</html>

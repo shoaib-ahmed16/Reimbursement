@@ -5,11 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Submit Expense</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/home.css">
 </head>
 
 <body>
+  <form>
+    <label>Month Of Reimbursement</label><br>
+    <label id="claimMonth"><br>
+      <label>Claim Year</label><br>
+      <input id="claimYear"><br>
+      <label>Claim Type</label><br>
+      <input id="claimType"><br>
+      <label>Date of Claim</label><br>
+      <input id="dateOfExpense"><br>
+      <label>Claim Amount</label><br>
+      <input id="claimAmount" placeholder="Amount in Indian Currency"><br>
+      <label>Approved Amount</label><br>
+      <input id="aprovedAmount" placeholder="Amount in Indian Currency"><br>
+      <label>Paid Amount</label><br>
+      <input id="paidAmount" placeholder="Amount in Indian Currency"><br>
+      <button class="button submit" type="button" onclick="paidReimbursment()">Submit</button><br>
+      <button class="button cancel" type="button" onclick="cancel()">Cancel</button>
+  </form>
 
 </body>
+<script src="./scripts/reimbursePaidPage.js"></script>
 
 </html>

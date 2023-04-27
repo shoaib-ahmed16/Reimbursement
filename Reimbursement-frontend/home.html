@@ -64,7 +64,8 @@
       </div>
       <div>
         <div>Reimbursement</div>
-        <button style="background-color: green; border: 2px solid green; cursor: pointer;">Submit an Expense</button>
+        <button style="background-color: green; border: 2px solid green; cursor: pointer;"
+          onclick="gotoSubmitExpensePage()">Submit an Expense</button>
       </div>
       <div style="display: flex; flex-wrap: wrap;">
         <div>My space</div>
@@ -86,6 +87,10 @@
         <div>Detailed View</div>
       </div>
       <div id="saved0-expense-display"></div>
+
+      <!--    popup message -->
+      <div id="display-view-details"></div>
+
 
       <div style="display: flex; flex-wrap: wrap;">
         <h3>Reimbursement History</h3>

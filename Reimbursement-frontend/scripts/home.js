@@ -1,7 +1,10 @@
+let months=[]
+let loginUser=JSON.parse(localStorage.getItem("loginUser"));
+  console.log(loginUser);
 $(document).ready(function(){
+ document.getElementById("user-login-name").innerHTML=loginUser.firstName+" "+loginUser.lastName;
 
-  let months=[];
-    $.ajax({
+ $.ajax({
     url:"http://localhost:8888/reimbursement/getSelectionMonth",
     type: "GET",
     success: function(data,status,xhr){
@@ -11,14 +14,15 @@ $(document).ready(function(){
     error: function(){
         alert("Unknown server error!");
       },
-    })
-  $.ajax({
+})
+  // reimbursement unpaid for current month or upcoming month  display api
+$.ajax({
   url:"http://localhost:8888/reimbursement/allReimbursementDetails",
   type: "GET",
   success: function(data,status,xhr){
     console.log(data)
     data.forEach((elem,index)=>{
-      let currentMonthIndex="January";
+      let currentMonthIndex=0;
       let blockDiv =document.createElement("div");
       blockDiv.setAttribute("class","blockDiv");
       let checkBox =document.createElement("input");
@@ -31,8 +35,8 @@ $(document).ready(function(){
       monthofReibursement.setAttribute("id","rembursiment_item"+elem.dateOfExpense);
       let month=elem.dateOfExpense.substring(3,5)
       let monthIndex=parseInt(month)
-      currentMonthIndex=monthIndex;
-      monthofReibursement.innerHTML=months[monthIndex];
+      currentMonthIndex=monthIndex-1;
+      monthofReibursement.innerHTML=months[monthIndex-1];
       }
       let dateOfClaim =document.createElement("div");
       {
@@ -54,6 +58,7 @@ $(document).ready(function(){
         claimStatus.addEventListener("click",()=>{
         console.log(elem);
         localStorage.setItem("paidReimburse",JSON.stringify(elem))
+         setTimeout(()=>{window.location.href="/reimbursePaidPage.html"},2)
         })
       }
      
@@ -61,36 +66,87 @@ $(document).ready(function(){
       let detailsButton =document.createElement("div");
       {
       detailsButton.setAttribute("id","rembursiment_item"+elem.reimbursementId+elem.paidStatus+index);
-        detailsButton.addEventListener("click",()=>{
-          console.log(index)
-          console.log(elem);
-           localStorage.setItem("viewsDetails",JSON.stringify(elem))
-        })
+      detailsButton.addEventListener("click",()=>{
+       let divviewbox =document.createElement("div")
+        {
+            divviewbox.setAttribute("class","view-div-0");
+        }
+        let divmesument1 =document.createElement("div")
+        {
+           divmesument1.setAttribute("class","divmesument");
+        }
+         let divmesument2 =document.createElement("div")
+        {
+           divmesument2.setAttribute("class","divmesument");
+        }
+        let divviewbox1 =document.createElement("div")
+        {
+          divviewbox1.setAttribute("class","view-div-1");
+          divviewbox1.innerHTML=`Reimbursement Status: ${(elem.paidStatus)?"Paid":"Unpaid"}`;
+        }
+
+        let divviewbox2 =document.createElement("div")
+        {
+          divviewbox2.setAttribute("class","view-div-2");
+          divviewbox2.innerHTML="Date Of Expense: "+elem.dateOfExpense
+        }
+        divmesument1.append(divviewbox1,divviewbox2);
+        divviewbox.append(divmesument1);
+        let divviewbox3 =document.createElement("div")
+        {
+          divviewbox3.setAttribute("class","view-div-1");
+          let month=elem.dateOfExpense.substring(3,5)
+          let monthIndex=parseInt(month)
+          currentMonthIndex=monthIndex-1;
+          divviewbox3.innerHTML="Month of Claim: "+months[monthIndex-1];
+        }
+        let divviewbox4 =document.createElement("div")
+        {
+          divviewbox4.setAttribute("class","view-div-2");
+          divviewbox4.innerHTML="Year of Claim: "+elem.claimYear;
+        }
+        divmesument2.append(divviewbox3,divviewbox4);
+        divviewbox.append(divmesument2);
+        // divmesument.innerHTML="";
+        let divviewbox5 =document.createElement("div")
+        {
+          divviewbox5.setAttribute("class","view-div-3");
+          divviewbox5.innerHTML="Amount Claim: "+elem.amount;
+        }
+        let divviewbox6 =document.createElement("div")
+        {
+          divviewbox6.setAttribute("class","view-div-4");
+          divviewbox6.innerHTML="Cancel";
+          divviewbox6.addEventListener("click",()=>{
+            document.getElementById("display-view-details").innerHTML="";
+          })
+        }
+         divviewbox.append(divviewbox5,divviewbox6);
+         document.getElementById("display-view-details").append(divviewbox)
+      })
         detailsButton.style="cursor:pointer"
         detailsButton.innerHTML="view Details";
        }
        const d = new Date();
-       if(currentMonthIndex>=d.getMonth())
+       if(currentMonthIndex>=d.getMonth()-1)
        {
         blockDiv.append(checkBox,monthofReibursement,dateOfClaim,claimAmount,claimStatus,detailsButton)
        document.getElementById("saved0-expense-display").append(blockDiv)
        }
     })
-    localStorage.setItem("loginUser",JSON.stringify(data))
-    setTimeout(()=>{window.location.href="/home.html"},20000)
   },
-error: function(){
+  error: function(){
   alert("Unknown server error!");
     },
-  })
-
+})
+  // reimbursement history display api
   $.ajax({
   url:"http://localhost:8888/reimbursement/allReimbursementPaidDetails",
   type: "GET",
   success: function(data,status,xhr){
     console.log(data)
     data.forEach((elem,index)=>{
-      let currentMonthIndex="January";
+      let currentMonthIndex=0;
       let blockDiv =document.createElement("div");
       blockDiv.setAttribute("class","blockDiv-history");
       let checkBox =document.createElement("input");
@@ -101,8 +157,8 @@ error: function(){
       {
       let month=elem.dateOfExpense.substring(3,5)
       let monthIndex=parseInt(month)
-      currentMonthIndex=monthIndex;
-      monthofReibursement.innerHTML=months[monthIndex];
+      currentMonthIndex=monthIndex-1;
+      monthofReibursement.innerHTML=months[monthIndex-1];
       }
       let dateOfClaim =document.createElement("div");
       {
@@ -130,22 +186,29 @@ error: function(){
         detailsButton.addEventListener("click",()=>{
           console.log(index)
           console.log(elem);
+          localStorage.setItem("detailsView",JSON.stringify(elem))
+          setTimeout(()=>{window.location.href="/home.html"},20000)
         })
         detailsButton.style="cursor:pointer"
         detailsButton.innerHTML="view Details";
        }
        const d = new Date();
-       if(currentMonthIndex<d.getMonth())
+       console.log(d.getMonth(),currentMonthIndex)
+       if(currentMonthIndex-1>=d.getMonth())
        {
         blockDiv.append(monthofReibursement,dateOfClaim,claimAmount,approvedAmount,paidAmount,claimStatus,detailsButton)
        document.getElementById("history-expense-display").append(blockDiv)
        }
     })
-    localStorage.setItem("loginUser",JSON.stringify(data))
-    setTimeout(()=>{window.location.href="/home.html"},20000)
   },
-error: function(){
+  error: function(){
   alert("Unknown server error!");
     },
   })
+
 })
+const gotoSubmitExpensePage=()=>{
+  setTimeout(()=>{window.location.href="/submit-expense.html"},2)
+}
+ 
+

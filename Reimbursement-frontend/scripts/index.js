@@ -13,7 +13,7 @@ $.ajax({
   success: function(data,status,xhr){
   console.log(data);
   localStorage.setItem("loginUser",JSON.stringify(data))
-  setTimeout(()=>{window.location.href="/home.html"},20000)
+  setTimeout(()=>{window.location.href="/home.html"},20)
 },
 error: function(){
 alert("Unknown server error!");

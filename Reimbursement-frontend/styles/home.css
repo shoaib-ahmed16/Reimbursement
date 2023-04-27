@@ -26,3 +26,54 @@
   text-decoration: underline;
   color: green;
 }
+
+.divmesument {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.view-div-0 {
+  width: 50%;
+  height: 200px;
+  background: rgb(0, 0, 0);
+  color: white;
+  display: block;
+  opacity: 100%;
+  position: absolute;
+  z-index: 10;
+  margin-left: 10%;
+  font-size: larger;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.view-div-1 {
+  width: 45%;
+  padding-left: 5%;
+  text-align: center;
+}
+
+.view-div-2 {
+  padding-left: 5%;
+  width: 45%;
+  text-align: center;
+}
+
+.view-div-3 {
+  width: 45%;
+  margin-left: 25%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.view-div-4 {
+  width: 45%;
+  margin-left: 25%;
+  text-align: center;
+  font-size: large;
+  border-radius: 2px;
+  background-color: red;
+  border: 2px solid red;
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
