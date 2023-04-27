@@ -23,6 +23,6 @@ const signup =()=>{
     })
   })
 }
-const cancelEmployeeUpdate =()=>{
+const loginPage =()=>{
    $.ajax(window.location.href="/index.html")
 }
