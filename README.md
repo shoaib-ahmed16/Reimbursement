@@ -1,10 +1,10 @@
 # Reimbursement
 
-####same repository have backend and frontend code folder please check carefully.
+#### Same repository have Backend-API code and Frontend Code folder please check carefully.
 
-Assignment expaining video: --> https://drive.google.com/drive/folders/1fxkPJSnrpwhLScZxcsPrPJrygXtV1Hwr?usp=share_link
+### Assignment expaining video: --> https://drive.google.com/drive/folders/1fxkPJSnrpwhLScZxcsPrPJrygXtV1Hwr?usp=share_link
 
-###frontend -deployment link : https://reimbursement-iqhl.vercel.app/ Note( backend have to run locally )
+### frontend -deployment link : https://reimbursement-iqhl.vercel.app/ <b>Note ( backendcode have to run locally )</b>
 
 #1.index.html (login signup page)
 
