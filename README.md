@@ -1,6 +1,6 @@
 # Reimbursement
 
-#### Same repository have Backend-API code and Frontend Code folder please check carefully.
+#### Same repository have Backend-API(Reimbursement Folder) code and Frontend Code (Reimbursement-frontend Folder) folder please check carefully.
 
 ### Assignment expaining video: --> https://drive.google.com/drive/folders/1fxkPJSnrpwhLScZxcsPrPJrygXtV1Hwr?usp=share_link
 
