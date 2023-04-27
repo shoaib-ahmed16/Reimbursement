@@ -4,8 +4,8 @@ const signup =()=>{
   let data ={
   "email": $("#email-user").val(),
   "password": $("#password-user").val(),
-  "firstName":  $("#firstName-user").val(),
-  "lastName":  $("#lastName-user").val(),
+  "firstName":$("#firstName-user").val(),
+  "lastName": $("#lastName-user").val(),
   }
   debugger
   $(document).ready(function(){

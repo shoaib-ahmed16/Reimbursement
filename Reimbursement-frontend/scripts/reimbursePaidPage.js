@@ -1,5 +1,4 @@
 let prev =JSON.parse(localStorage.getItem("paidReimburse"));
-console.log(prev);
 (function addPrevData(prev){
   document.getElementById("claimMonth").value=prev.claimMonth;
   document.getElementById("claimYear").value=prev.claimYear;

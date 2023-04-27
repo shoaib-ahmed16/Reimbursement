@@ -3,7 +3,11 @@ let loginUser=JSON.parse(localStorage.getItem("loginUser"));
   console.log(loginUser);
 $(document).ready(function(){
  document.getElementById("user-login-name").innerHTML=loginUser.firstName+" "+loginUser.lastName;
-
+ let letter= loginUser.firstName.substring(0,1);
+ console.log(letter)
+ document.getElementById("left-menu-circle").innerHTML=letter;
+ document.getElementById("cicular-firstLetter").innerHTML=letter;
+})
  $.ajax({
     url:"http://localhost:8888/reimbursement/getSelectionMonth",
     type: "GET",
@@ -54,13 +58,17 @@ $.ajax({
       claimStatus.innerHTML=(elem.paidStatus)?"Paid":"Unpaid";
       if(!elem.paidStatus)
       {
-        claimStatus.style="cursor:pointer"
+        claimStatus.style="cursor:pointer; color:red"
         claimStatus.addEventListener("click",()=>{
         console.log(elem);
         localStorage.setItem("paidReimburse",JSON.stringify(elem))
          setTimeout(()=>{window.location.href="/reimbursePaidPage.html"},2)
         })
       }
+      else{
+         claimStatus.style="cursor:pointer; color:green"
+      }
+
      
       }
       let detailsButton =document.createElement("div");
@@ -120,6 +128,7 @@ $.ajax({
           divviewbox6.addEventListener("click",()=>{
             document.getElementById("display-view-details").innerHTML="";
           })
+          divviewbox6.style="cursor:pointer"
         }
          divviewbox.append(divviewbox5,divviewbox6);
          document.getElementById("display-view-details").append(divviewbox)
@@ -179,22 +188,25 @@ $.ajax({
       let claimStatus =document.createElement("div");
       {
         claimStatus.innerHTML=(elem.paidStatus)?"Paid":"Unpaid";
+        if(elem.paidStatus){
+          claimStatus.style="color:green;cursor: no-drop"
+        }
+        else{
+           claimStatus.style="color:lightgrey;cursor:no-drop"
+        }
       }
       let detailsButton =document.createElement("div");
       {
       detailsButton.setAttribute("id","rembursiment_item"+elem.reimbursementId+elem.paidStatus+index);
         detailsButton.addEventListener("click",()=>{
-          console.log(index)
-          console.log(elem);
           localStorage.setItem("detailsView",JSON.stringify(elem))
           setTimeout(()=>{window.location.href="/home.html"},20000)
         })
-        detailsButton.style="cursor:pointer"
         detailsButton.innerHTML="view Details";
        }
        const d = new Date();
        console.log(d.getMonth(),currentMonthIndex)
-       if(currentMonthIndex-1>=d.getMonth())
+       if(currentMonthIndex>=d.getMonth())
        {
         blockDiv.append(monthofReibursement,dateOfClaim,claimAmount,approvedAmount,paidAmount,claimStatus,detailsButton)
        document.getElementById("history-expense-display").append(blockDiv)
@@ -205,8 +217,6 @@ $.ajax({
   alert("Unknown server error!");
     },
   })
-
-})
 const gotoSubmitExpensePage=()=>{
   setTimeout(()=>{window.location.href="/submit-expense.html"},2)
 }

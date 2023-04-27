@@ -14,10 +14,9 @@
 
 <body>
   <div style="display: flex; flex-wrap: wrap; margin-top: 50px;">
-    <div style="width: 25%; margin-left: 2%; border-right: 1px dashed black;" id="left-menu">
-      <div
-        style="background-color: lightgray; height: 40px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px; display: flex; flex-wrap: wrap;">
-        <div style="border-radius: 20px; background-color: rgb(120, 119, 119); width: 40px;height: 40px;"></div>
+    <div class="left-menu">
+      <div class="left-menu-name-div">
+        <div id="left-menu-circle" class="left-menu-circle1"></div>
         <div id="user-login-name">Ananya Singh</div>
       </div>
       <div>
@@ -57,28 +56,26 @@
     </div>
     <div style="margin-left:2%;width: 65%;" id="main-display-reimbursement">
       <div style="display: flex; flex-wrap: wrap;">
-        <div>Search mirror</div>
-        <div
-          style="border-radius: 20px; background-color: rgb(120, 119, 119); width: 40px;height: 40px;text-align: right;">
+        <div><img src="./images/search.png" /></div>
+        <div id="cicular-firstLetter" class="left-menu-circle1 right-side-circle">
         </div>
       </div>
       <div>
         <div>Reimbursement</div>
-        <button style="background-color: green; border: 2px solid green; cursor: pointer;"
-          onclick="gotoSubmitExpensePage()">Submit an Expense</button>
+        <button onclick="gotoSubmitExpensePage()">Submit an Expense</button>
       </div>
-      <div style="display: flex; flex-wrap: wrap;">
+      <div class="flex-class space-head">
         <div>My space</div>
         <div>
-          <div style="border-radius: 2px; background-color: black; width: 4px;height: 4px;text-align: right;"></div>
+          <div></div>
           <div>Reimbursement</div>
         </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap;">
-        <h3>Saved Expenses</h3>
-        <h3>View all expenses</h3>
+      <div class="flex-class">
+        <div class="saved-expense">Saved Expenses</div>
+        <div class="saved-expense  shift-right">View all expenses</div>
       </div>
-      <div id="main-header" style="display: flex; flex-wrap: wrap;">
+      <div id="main-header" class="flex-class main-header main-header-boxing">
         <div> </div>
         <div>Month of Reimbursement</div>
         <div>Date of Claim</div>
@@ -92,11 +89,10 @@
       <div id="display-view-details"></div>
 
 
-      <div style="display: flex; flex-wrap: wrap;">
-        <h3>Reimbursement History</h3>
+      <div class="flex-class">
+        <div class="saved-expense">Reimbursement History</div>
       </div>
-      <div id="main-header-history" style="display: flex; flex-wrap: wrap;">
-        <div> </div>
+      <div id="main-header-history" class="flex-class main-header-history main-header-boxing">
         <div>Month of Reimbursement</div>
         <div>Date of Claim</div>
         <div>Claime Amount</div>

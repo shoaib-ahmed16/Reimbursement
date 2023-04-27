@@ -3,14 +3,12 @@
     url:"http://localhost:8888/reimbursement/getSelectionMonth",
     type: "GET",
     success: function(data,status,xhr){
-      console.log(data)
       months=data;
       data.forEach((elem,index)=>{
         let opt =document.createElement("option")
         opt.setAttribute("id",index)
         opt.innerHTML=elem;
         document.getElementById("claimMonth").append(opt);
-        console.log(index)
       })
      
     },
@@ -29,8 +27,7 @@ const submitClaim =()=>{
     "amount": $("#amount").val(),
     "claimMonth":  $("#claimMonth").val(),
     "claimYear":  $("#claimYear").val(),
-  }
-  console.log(data)
+   }
    $.ajax({
     url: "http://localhost:8888/reimbursement/addOrUpdate",
     type: "POST",

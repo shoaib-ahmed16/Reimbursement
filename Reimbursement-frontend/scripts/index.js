@@ -11,7 +11,6 @@ $.ajax({
   data:JSON.stringify(data),
   processData: false,
   success: function(data,status,xhr){
-  console.log(data);
   localStorage.setItem("loginUser",JSON.stringify(data))
   setTimeout(()=>{window.location.href="/home.html"},20)
 },
