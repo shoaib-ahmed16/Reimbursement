@@ -10,4 +10,5 @@ public interface ReimbursementIntr {
 	public String addOrUpdateReimbursement(Reimbursement reb);
 	public List<ReimbursementDTO> getAllReibursementDetails();
 	public List<Reimbursement> getAllReibursementDetailsByPaidStatus(boolean status);
+	public String deleteReibursment(Integer reimbursementId);
 }

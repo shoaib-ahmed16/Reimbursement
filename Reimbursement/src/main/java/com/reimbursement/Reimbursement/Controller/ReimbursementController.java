@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -63,6 +64,11 @@ public class ReimbursementController {
 	public ResponseEntity<String> addReimburseMent(@RequestBody Reimbursement reimbursement)
 	{
 		return new ResponseEntity<String>(reimbursementIntr.addOrUpdateReimbursement(reimbursement),HttpStatus.ACCEPTED);
+	}
+	
+	@DeleteMapping("/delete/{reimbursementId}")
+	public ResponseEntity<String> deleteReimbursementById(@PathVariable("reimbursementId") int reimbursementId){
+		return new ResponseEntity<String>(reimbursementIntr.deleteReibursment(reimbursementId),HttpStatus.ACCEPTED);
 	}
 	
 	@GetMapping("/getSelectionMonth")

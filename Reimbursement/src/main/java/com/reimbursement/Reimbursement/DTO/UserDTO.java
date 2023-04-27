@@ -6,7 +6,7 @@ public class UserDTO {
 
 	private int userId;
 	
-	private String firstname;
+	private String firstName;
 	
 	private String lastName;
 	
@@ -22,12 +22,12 @@ public class UserDTO {
 		this.userId = userId;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -54,10 +54,10 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public UserDTO(int userId, String firstname, String lastName, String email, String password) {
+	public UserDTO(int userId, String firstName, String lastName, String email, String password) {
 		super();
 		this.userId = userId;
-		this.firstname = firstname;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
@@ -66,7 +66,7 @@ public class UserDTO {
 	public UserDTO(User user) {
 		super();
 		this.userId = user.getUserId();
-		this.firstname = user.getFirstname();
+		this.firstName = user.getFirstName();
 		this.lastName = user.getLastName();
 		this.email = user.getEmail();
 		this.password = user.getPassword();

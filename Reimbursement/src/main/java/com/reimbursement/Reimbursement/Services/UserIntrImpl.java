@@ -36,7 +36,7 @@ public class UserIntrImpl  implements UserIntr{
 			{
 				UserDTO userOnly =new UserDTO();
 				userOnly.setEmail(email);
-				userOnly.setFirstname(user.getFirstname());
+				userOnly.setFirstName(user.getFirstName());
 				userOnly.setLastName(user.getLastName());
 				return userOnly;
 			}

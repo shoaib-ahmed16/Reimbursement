@@ -12,7 +12,7 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int userId;
 	
-	private String firstname;
+	private String firstName;
 	
 	private String lastName;
 	
@@ -28,12 +28,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstname(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -60,10 +60,10 @@ public class User {
 		this.password = password;
 	}
 
-	public User(int userId, String firstname, String lastName, String email, String password) {
+	public User(int userId, String firstName, String lastName, String email, String password) {
 		super();
 		this.userId = userId;
-		this.firstname = firstname;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;

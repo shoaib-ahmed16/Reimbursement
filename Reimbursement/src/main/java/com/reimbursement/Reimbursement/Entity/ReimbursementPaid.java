@@ -28,6 +28,16 @@ public class ReimbursementPaid {
 	
 	private boolean paidStatus=true;
 	
+    private String paymentDate;
+	
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(String paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+	
 	public int getReimbursementPaidId() {
 		return reimbursementPaidId;
 	}
@@ -101,7 +111,7 @@ public class ReimbursementPaid {
 	}
 
 	public ReimbursementPaid(int reimbursementPaidId, String claimType, String dateOfExpense, double claimAmount,
-			double aprovedAmount, double paidAmount, String claimMonth, int claimYear, boolean paidStatus) {
+			double aprovedAmount, double paidAmount, String claimMonth, int claimYear, boolean paidStatus,String paymentDate) {
 		super();
 		this.reimbursementPaidId = reimbursementPaidId;
 		this.claimType = claimType;
@@ -112,6 +122,7 @@ public class ReimbursementPaid {
 		this.claimMonth = claimMonth;
 		this.claimYear = claimYear;
 		this.paidStatus = paidStatus;
+		this.paymentDate=paymentDate;
 	}
 	public ReimbursementPaid() {
 		

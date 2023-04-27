@@ -30,7 +30,7 @@ public class ReimbursementPaidIntrImpl implements ReimbursementPaidIntr {
 	public List<ReimbursementPaidDTO> getAllReimbursementPaidDetails() {
 		// TODO Auto-generated method stub
 		List<Reimbursement> listOfUnpaid=reimbursementIntr.getAllReibursementDetailsByPaidStatus(false);
-		List<ReimbursementPaidDTO> list =new ArrayList<>();	
+		List<ReimbursementPaidDTO> list =new ArrayList<>();
 		for(Reimbursement r:listOfUnpaid)
 		{
 			list.add(new ReimbursementPaidDTO(r));

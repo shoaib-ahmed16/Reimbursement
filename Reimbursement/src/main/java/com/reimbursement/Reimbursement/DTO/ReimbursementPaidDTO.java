@@ -21,7 +21,18 @@ private int reimbursementPaidId;
 	
 	private int claimYear;
 	
-	private boolean paidStatus=true;
+	private String paymentDate;
+	
+	private boolean paidStatus;
+	
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(String paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+	
 	
 	public int getReimbursementPaidId() {
 		return reimbursementPaidId;
@@ -96,7 +107,7 @@ private int reimbursementPaidId;
 	}
 
 	public ReimbursementPaidDTO(int reimbursementPaidId, String claimType, String dateOfExpense, double claimAmount,
-			double aprovedAmount, double paidAmount, String claimMonth, int claimYear, boolean paidStatus) {
+			double aprovedAmount, double paidAmount, String claimMonth, int claimYear, boolean paidStatus,String paymentDate) {
 		super();
 		this.reimbursementPaidId = reimbursementPaidId;
 		this.claimType = claimType;
@@ -107,6 +118,7 @@ private int reimbursementPaidId;
 		this.claimMonth = claimMonth;
 		this.claimYear = claimYear;
 		this.paidStatus = paidStatus;
+		this.paymentDate=paymentDate;
 	}
 	public ReimbursementPaidDTO() {
 		
@@ -122,6 +134,7 @@ private int reimbursementPaidId;
 		this.claimMonth = reb.getClaimMonth();
 		this.claimYear = reb.getClaimYear();
 		this.paidStatus = reb.isPaidStatus();
+		this.paymentDate=reb.getPaymentDate();
 	}
    public ReimbursementPaidDTO(Reimbursement reb) {
 	   super();
@@ -133,5 +146,6 @@ private int reimbursementPaidId;
 		this.claimMonth = reb.getClaimMonth();
 		this.claimYear = reb.getClaimYear();
 		this.paidStatus = reb.getPaidStatus();
+		this.paymentDate="dd/mm/yyyy";
 	}
 }
