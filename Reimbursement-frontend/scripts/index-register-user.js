@@ -1,5 +1,3 @@
-
-
 const signup =()=>{
   let data ={
   "email": $("#email-user").val(),
@@ -7,7 +5,6 @@ const signup =()=>{
   "firstName":$("#firstName-user").val(),
   "lastName": $("#lastName-user").val(),
   }
-  debugger
   $(document).ready(function(){
     $.ajax({
     url: "http://localhost:8888/reimbursement/userRegister",

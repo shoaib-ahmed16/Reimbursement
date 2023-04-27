@@ -1,10 +1,8 @@
 let months=[]
 let loginUser=JSON.parse(localStorage.getItem("loginUser"));
-  console.log(loginUser);
 $(document).ready(function(){
  document.getElementById("user-login-name").innerHTML=loginUser.firstName+" "+loginUser.lastName;
  let letter= loginUser.firstName.substring(0,1);
- console.log(letter)
  document.getElementById("left-menu-circle").innerHTML=letter;
  document.getElementById("cicular-firstLetter").innerHTML=letter;
 })
@@ -12,7 +10,6 @@ $(document).ready(function(){
     url:"http://localhost:8888/reimbursement/getSelectionMonth",
     type: "GET",
     success: function(data,status,xhr){
-      console.log(data)
       months=data;
     },
     error: function(){
@@ -24,7 +21,6 @@ $.ajax({
   url:"http://localhost:8888/reimbursement/allReimbursementDetails",
   type: "GET",
   success: function(data,status,xhr){
-    console.log(data)
     data.forEach((elem,index)=>{
       let currentMonthIndex=0;
       let blockDiv =document.createElement("div");
@@ -60,7 +56,6 @@ $.ajax({
       {
         claimStatus.style="cursor:pointer; color:red"
         claimStatus.addEventListener("click",()=>{
-        console.log(elem);
         localStorage.setItem("paidReimburse",JSON.stringify(elem))
          setTimeout(()=>{window.location.href="/reimbursePaidPage.html"},2)
         })
@@ -153,7 +148,6 @@ $.ajax({
   url:"http://localhost:8888/reimbursement/allReimbursementPaidDetails",
   type: "GET",
   success: function(data,status,xhr){
-    console.log(data)
     data.forEach((elem,index)=>{
       let currentMonthIndex=0;
       let blockDiv =document.createElement("div");
@@ -205,7 +199,6 @@ $.ajax({
         detailsButton.innerHTML="view Details";
        }
        const d = new Date();
-       console.log(d.getMonth(),currentMonthIndex)
        if(currentMonthIndex>=d.getMonth())
        {
         blockDiv.append(monthofReibursement,dateOfClaim,claimAmount,approvedAmount,paidAmount,claimStatus,detailsButton)
